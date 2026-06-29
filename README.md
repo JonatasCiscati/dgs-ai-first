@@ -31,12 +31,18 @@ dgs-ai-first/
 │   ├── SLA-2024-tabela-sla-clientes.md     # Tabela de SLAs por tier de cliente
 │   └── FAQ-atendimento.md                  # FAQ informal da equipe de atendimento
 │
+├── Prática 3/                          # Cenário-Âncora 3 — Fase de Governança e Validação
+│   └── Cenário/
+│       └── cenario-3-exercicios-fase-governanca.md  # Enunciados dos exercícios por papel
+│
 ├── exercicio1-1.md     # Resposta — QA: Identificação de cenários de falha de IA
 ├── exercicio1-2.md     # Resposta — QA: Design de critérios de aceitação
 ├── exercicio1-3.md     # Resposta — QA: Plano de testes para pipeline de RAG
 ├── exercicio2-1.md     # Resposta — QA: Seção Testing Standards do AGENTS.md
 ├── exercicio2-2.md     # Resposta — QA: Test plan (SDD) para o query endpoint
-└── exercicio2-3.md     # Resposta — QA: SKILL.md create-integration-test + checklist
+├── exercicio2-3.md     # Resposta — QA: SKILL.md create-integration-test + checklist
+├── exercicio3-1.md     # Resposta — QA: Revisão crítica das respostas + parecer de go-live
+└── exercicio3-2.md     # Resposta — QA: Revisão crítica dos testes gerados por IA
 ```
 
 ## Cenário-Âncora 1 — Fase de Entendimento
@@ -67,6 +73,16 @@ Artefatos produzidos nesta fase:
 - Test plan (formato SDD) para o query endpoint com 10 cenários funcionais + 5 de robustez
 - SKILL.md `create-integration-test` (nível Artifact) + checklist de revisão de testes
 
+## Cenário-Âncora 3 — Fase de Governança e Validação
+
+Última fase antes do go-live do assistente NovaTech. O pipeline de RAG está funcional, os primeiros endpoints foram implementados e o bot do Teams responde perguntas de teste em staging — mas o time precisa garantir que o sistema é confiável e governável antes da demonstração à diretoria.
+
+O foco da fase é o **harness de governança**: o conjunto de verificações e limites que transforma um protótipo em um sistema de produção, usando **structured outputs** (forçar o modelo a responder em formato validável) e **human-in-the-loop** (pontos onde um humano valida antes de prosseguir). A fase também exige **revisão crítica de outputs de IA** — respostas do assistente, código e testes gerados com apoio de ferramentas.
+
+Artefatos produzidos pela disciplina de QA nesta fase:
+- Revisão crítica de 8 respostas do assistente com aplicação de rubrica, comparação com segundo avaliador e parecer de go-live
+- Revisão crítica de 3 testes de integração gerados por IA + reescrita de teste com verificação de conteúdo e citação de fonte
+
 ## Tópicos cobertos
 
 **Prática 1:**
@@ -80,6 +96,10 @@ Artefatos produzidos nesta fase:
 - Recorte de Domínio e Spec Driven Development (SDD)
 - AGENTS.md
 - Skills
+
+**Prática 3:**
+- Harness Engineering (Human-in-the-Loop e Structured Outputs)
+- Revisão Crítica de Outputs de IA (respostas, código e testes)
 
 ## Papéis e ferramentas
 
@@ -108,3 +128,10 @@ Artefatos produzidos nesta fase:
 | [exercicio2-1.md](exercicio2-1.md) | QA | Seção `## Testing Standards` do AGENTS.md do projeto NovaTech Assistant — padrões prescritivos para testes gerados por IA |
 | [exercicio2-2.md](exercicio2-2.md) | QA | Test plan em formato SDD para o query endpoint: 10 cenários funcionais (VC-01 a VC-04) + 5 testes de robustez (ambiguidade, prompt injection, idiomas) |
 | [exercicio2-3.md](exercicio2-3.md) | QA | SKILL.md da skill Artifact `create-integration-test`: template, exemplos DO/DON'T, anti-padrões de LLMs em testes + checklist de revisão em 8 itens |
+
+### Prática 3
+
+| Arquivo | Papel | Exercício |
+|---------|-------|-----------|
+| [exercicio3-1.md](exercicio3-1.md) | QA | Revisão crítica de 8 respostas do assistente com rubrica de 4 dimensões + regra de corte, comparação com segundo avaliador e relatório de qualidade com parecer de go-live (identifica as reprovações por assunção de dado e por idioma) |
+| [exercicio3-2.md](exercicio3-2.md) | QA | Revisão crítica de 3 testes de integração gerados por IA (assertions vagas, ausência de domínio, mock permissivo, inconsistência jest/Vitest) + reescrita do Teste 1 verificando conteúdo da resposta e citação de fonte |
